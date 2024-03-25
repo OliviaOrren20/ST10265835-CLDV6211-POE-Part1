@@ -1,0 +1,110 @@
+﻿@page
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Cambria, sans-serif;
+            background-color: Orange;
+        }
+
+        .contact-info, .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+            color: brown;
+        }
+
+        .contact-form label {
+            margin-top: 10px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            background-color: Orange;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .contact-form button:hover {
+                background-color: darkblue;
+            }
+
+        .success-message {
+            color: green;
+            margin-top: 20px;
+        }
+
+            .success-message.hidden {
+                display: none;
+            }
+    </style>
+</head>
+<body>
+
+    <h2>Contact Us</h2>
+
+    <p>If you have any queries or need further information, please contact us at:</p>
+
+    <div>
+        <p><strong>Phone:</strong> <span class="contact-info">+27 123 456 789</span></p>
+        <p><strong>Email:</strong> <span class="contact-info">info@khumalocraft.co.za</span></p>
+    </div>
+
+    <h3> Address </h3>
+    <div style="font-family: Arial, sans-serif;">
+        123 Craft Street, Craftsville, SA
+    </div>
+
+
+
+    <h3>Send us a message</h3>
+    <form class="contact-form" id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="successMessage" class="success-message hidden">
+        We received your message! We will contact you back!
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting in the traditional way
+
+            // Implemented my form submission logic here, for example using Fetch API to send data to the server
+
+            // After form submission logic (e.g., after receiving response from the server), show the success message
+            document.getElementById('successMessage').classList.remove('hidden');
+
+            // Optionally, clear the form fields
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
+
+<img src="~/images/Contact Us Image Cloud6211.jpg" alt="About Us" class="img-fluid">
+
+
+
